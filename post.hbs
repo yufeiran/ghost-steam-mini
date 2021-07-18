@@ -1,0 +1,28 @@
+{{!< default}}
+<main class="content" role="main">
+    <article class="{{post_class}}">
+        {{#post}}
+        <header>
+        <h1 class="post-title">{{{title}}}</h1>
+        <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY/M/DD"}}</time></div>
+        </header>
+        <section class="post-content">
+            {{content}}
+        </section>
+        <section class="post-tags">
+            {{#if tags}}<div class="post-meta tags"><i class="fa fa-fw fa-tags"></i> {{tags}}</div>{{/if}}
+        </section>
+        <section class="share">
+            <p class="backtotop"><a data-scroll href="#site-head"><i class="fa fa-lg fa-fw fa-angle-double-up"></i></a><a data-scroll class="backtotoptext" href="#site-head"> Back to top</a></p>
+            <p class="info prompt">Share</p>
+            <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}" title="Share on Twitter"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-2x fa-fw fa-twitter-square"></i> <span class="hidden">Twitter</span>
+            </a>
+        </section>
+
+        {{/post}}
+
+        {{!> disqus}}
+    </article>
+</main>

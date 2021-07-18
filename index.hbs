@@ -1,0 +1,15 @@
+{{!< default}}
+<main class="content" role="main">
+    {{#foreach posts}}
+    <article class="preview">
+        <header>
+            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+            <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY/M/DD"}}</time></div>
+        </header>
+        <section class="post-excerpt">
+            <a class="excerptlink" href="{{url}}"><p>{{excerpt words="90"}}</p></a>
+        </section>
+    </article>
+    {{/foreach}}
+    {{pagination}}
+</main>
